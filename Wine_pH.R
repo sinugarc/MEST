@@ -115,6 +115,44 @@ hist(quality, main="Histograma de la variable quality")
 plot(quality, main="Gráfica de dispersión de la variable quality") 
 na_quality=is.na(quality)
 
+#Train & Test
+
+#Utilizamos el 70% del conjunto de datos como el conjunto de entrenamiento y el 30% restante como test
+
+  #Semilla 1
+
+set.seed(1)
+sample1 <- sample(c(TRUE, FALSE), nrow(datos), replace=TRUE, prob=c(0.7, 0.3))
+train1 <- datos[sample1,]
+test1 <- datos[!sample1,]
+
+  #Semilla 2
+
+set.seed(2)
+sample2 <- sample(c(TRUE, FALSE), nrow(datos), replace=TRUE, prob=c(0.7, 0.3))
+train2 <- datos[sample2,]
+test2 <- datos[!sample2,]
+
+  #Semilla 3
+
+set.seed(3)
+sample3 <- sample(c(TRUE, FALSE), nrow(datos), replace=TRUE, prob=c(0.7, 0.3))
+train3 <- datos[sample3,]
+test3 <- datos[!sample3,]
+
+#Semilla 4
+
+set.seed(4)
+sample4 <- sample(c(TRUE, FALSE), nrow(datos), replace=TRUE, prob=c(0.7, 0.3))
+train4 <- datos[sample4,]
+test4 <- datos[!sample4,]
+
+#Semilla 5
+
+set.seed(5)
+sample5 <- sample(c(TRUE, FALSE), nrow(datos), replace=TRUE, prob=c(0.7, 0.3))
+train5 <- datos[sample5,]
+test5 <- datos[!sample5,]
 
 ##Selección del mejor modelo##
 
