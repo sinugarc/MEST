@@ -119,26 +119,36 @@ na_quality=is.na(quality)
 
 #Utilizamos el 70% del conjunto de datos como el conjunto de entrenamiento y el 30% restante como test
 
-  #Semilla 1
+#Semilla 1
 
 set.seed(1)
 sample1 <- sample(c(TRUE, FALSE), nrow(datos), replace=TRUE, prob=c(0.7, 0.3))
 train1 <- datos[sample1,]
 test1 <- datos[!sample1,]
+#prop.table(table(train1))    #La tabla es demasiado grande para que funcione el comando
+model.exh1 <- regsubsets(pH ~ ., data=train1)
+summary(model.exh1)
 
-  #Semilla 2
+
+#Semilla 2
 
 set.seed(2)
 sample2 <- sample(c(TRUE, FALSE), nrow(datos), replace=TRUE, prob=c(0.7, 0.3))
 train2 <- datos[sample2,]
 test2 <- datos[!sample2,]
+#prop.table(table(train2))
+model.exh2 <- regsubsets(pH ~ ., data=train2)
+summary(model.exh2)
 
-  #Semilla 3
+#Semilla 3
 
 set.seed(3)
 sample3 <- sample(c(TRUE, FALSE), nrow(datos), replace=TRUE, prob=c(0.7, 0.3))
 train3 <- datos[sample3,]
 test3 <- datos[!sample3,]
+#prop.table(table(train3))
+model.exh3 <- regsubsets(pH ~ ., data=train3)
+summary(model.exh3)
 
 #Semilla 4
 
@@ -146,6 +156,9 @@ set.seed(4)
 sample4 <- sample(c(TRUE, FALSE), nrow(datos), replace=TRUE, prob=c(0.7, 0.3))
 train4 <- datos[sample4,]
 test4 <- datos[!sample4,]
+#prop.table(table(train4))
+model.exh4 <- regsubsets(pH ~ ., data=train4)
+summary(model.exh4)
 
 #Semilla 5
 
@@ -153,6 +166,10 @@ set.seed(5)
 sample5 <- sample(c(TRUE, FALSE), nrow(datos), replace=TRUE, prob=c(0.7, 0.3))
 train5 <- datos[sample5,]
 test5 <- datos[!sample5,]
+#prop.table(table(train5))
+model.exh5 <- regsubsets(pH ~ ., data=train5)
+summary(model.exh5)
+
 
 ##Selección del mejor modelo##
 
