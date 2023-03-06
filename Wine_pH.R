@@ -2,7 +2,7 @@
 getwd()
 
 #Utilizamos la ruta desde el directorio de trabajo
-datos <- read.csv("/Users/alicia/Práctica 1/winequality-red.csv")
+datos <- read.csv("winequality-red.csv")
 
 #Instalamos los paquetes necesarios
 install.packages("leaps")
@@ -19,10 +19,8 @@ str(datos)  #Nos devuelve los tipos de las variables contenidas en nuestro conju
 summary(datos)  #Nos devuelve un resumen de algunas características importantes de las variables de nuestro conjunto de datos
 
 #Número de observaciones y número de variables
-
 n=1599 #Número de observaciones
 p=12 #Número de variables
-
 
 ##Análisis descriptivo##
 
@@ -42,7 +40,7 @@ alcohol <- datos$alcohol
 quality <- datos$quality  #No sirve como variable respuesta por ser discreta.
 
 #Realizamos un pequeño estudio de cada una de las variables
-
+layout(matrix(1:4,ncol=2,byrow=TRUE))
 #fixed acidity
 summary(f.a)
 hist(f.a, main="Histograma de la variable fixed acidity")
@@ -56,6 +54,7 @@ plot(v.a, main="Gráfica de dispersión de la variable volatile acidity")
 na_v.a=is.na(v.a)
 
 #citric acid
+layout(matrix(1:4,ncol=2,byrow=TRUE))
 summary(c.a)
 hist(c.a, main="Histograma de la variable citric acid")
 plot(c.a, main="Gráfica de dispersión de la variable citric acid") 
@@ -68,6 +67,7 @@ plot(r.s, main="Gráfica de dispersión de la variable residual sugar")
 na_r.s=is.na(r.s)
 
 #chlorides
+layout(matrix(1:4,ncol=2,byrow=TRUE))
 summary(chlorides)
 hist(chlorides, main="Histograma de la variable chlorides")
 plot(chlorides, main="Gráfica de dispersión de la variable chlorides") 
@@ -80,6 +80,7 @@ plot(f.s.d, main="Gráfica de dispersión de la variable free sulfur dioxide")
 na_f.s.d=is.na(f.s.d)
 
 #total sulfur dioxide
+layout(matrix(1:4,ncol=2,byrow=TRUE))
 summary(t.s.d)
 hist(t.s.d, main="Histograma de la variable total sulfur dioxide")
 plot(t.s.d, main="Gráfica de dispersión de la variable total sulfur dioxide") 
@@ -92,6 +93,7 @@ plot(density, main="Gráfica de dispersión de la variable density")
 na_density=is.na(density)
 
 #pH
+layout(matrix(1:4,ncol=2,byrow=TRUE))
 summary(pH)
 hist(pH, main="Histograma de la variable pH")
 plot(pH, main="Gráfica de dispersión de la variable pH") 
@@ -104,6 +106,7 @@ plot(sulphates, main="Gráfica de dispersión de la variable sulphates")
 na_sulphates=is.na(sulphates)
 
 #alcohol
+layout(matrix(1:4,ncol=2,byrow=TRUE))
 summary(alcohol)
 hist(alcohol, main="Histograma de la variable alcohol")
 plot(alcohol, main="Gráfica de dispersión de la variable alcohol") 
